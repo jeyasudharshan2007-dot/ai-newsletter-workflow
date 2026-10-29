@@ -4,111 +4,161 @@ Project
 
 CAPSTONE 51 — AI Newsletter Production Workflow
 
+Purpose
+
+This library contains reusable prompts for researching, summarizing, verifying, and drafting a weekly AI and technology newsletter.
+
 Prompt 1: Find Relevant News
 
-You are a research assistant for an AI and technology newsletter.
+Tool: Perplexity or ChatGPT
 
-Identify recent developments in artificial intelligence and technology that may interest a general audience.
+Prompt:
 
-For each candidate story, provide:
+Find recent news about artificial intelligence and technology from reputable sources. For each result, provide the headline, publisher, publication date, original URL, and a short explanation of why it matters.
 
-- Headline
-- Publisher
-- Publication date
-- Original article URL
-- Short explanation of its relevance
+Do not invent articles, URLs, dates, or quotations. Clearly identify information that cannot be verified.
 
-Never invent sources, URLs, dates, or facts. Clearly identify anything you cannot verify.
+Expected output: A list of candidate news articles.
 
 Prompt 2: Summarize an Article
 
-You are an editor for a weekly technology newsletter.
+Tool: ChatGPT
 
-Using only the article text supplied below:
+Prompt:
 
-1. Write a summary of 80–120 words.
-2. Explain what happened and why it matters.
-3. Preserve important names, dates, figures, and qualifications.
-4. Do not add information that is absent from the source.
-5. Include the original article URL.
+Summarize the article below in 80–120 words for a general audience.
 
-Article title:
-[Insert title]
+Include the main development, important evidence, and why it matters. Preserve the original meaning and distinguish confirmed facts from opinions or predictions.
 
-Publisher:
-[Insert publisher]
+Use only information supported by the supplied article. Do not add missing facts.
 
-Article text:
-[Paste article text or relevant excerpts]
+Article text or notes:
+[Paste article text or notes here]
 
-Prompt 3: Generate Newsletter Headlines
+Original URL:
+[Paste source URL here]
 
-Create five accurate, clear, engaging headlines for the verified story below.
+Expected output: A concise, source-based summary.
 
-Requirements:
+Prompt 3: Verify a Summary
 
-- Do not exaggerate.
-- Do not imply results the article does not support.
-- Avoid clickbait.
-- Preserve the central meaning.
+Tool: ChatGPT
 
-Verified story:
-[Insert approved summary]
+Prompt:
 
-Prompt 4: Fact-Checking
+Compare the following newsletter summary with the original article provided.
 
-Compare the draft below against the original source.
+Identify:
 
-Create a table with:
+1. Claims supported by the source.
+2. Claims that are inaccurate or misleading.
+3. Important context missing from the summary.
+4. Names, dates, figures, and statements that need checking.
+5. Any unsupported claims.
 
-- Draft claim
-- Supporting evidence from the source
-- Status: supported, contradicted, or not established
-- Required correction
+Do not mark a claim as verified unless the supplied source supports it. If evidence is insufficient, state that human review is required.
 
-Do not treat unsupported claims as facts. If evidence is insufficient, say so.
+Original article:
+[Paste relevant article text]
 
-Original source:
-[Insert source text and URL]
+Newsletter summary:
+[Paste draft summary]
 
-Newsletter draft:
-[Insert draft]
+Expected output: A claim-by-claim verification report.
 
-Prompt 5: Draft the Newsletter
+Prompt 4: Draft a Newsletter
 
-Create a weekly AI and technology newsletter using only the verified stories supplied below.
+Tool: ChatGPT
 
-Include:
+Prompt:
 
-- Newsletter title and issue date
-- Short editor's introduction
-- Three to five news summaries
-- Why each story matters
-- A source link for every story
-- A short closing section
+Create a professional weekly newsletter titled "AI & Technology Weekly" using only the approved story summaries below.
 
-Use clear language and concise paragraphs. Do not invent facts, quotes, dates, or links.
+For each story, include:
 
-Verified stories:
-[Insert approved stories]
+- A clear headline
+- Publisher and publication date
+- A short summary
+- Why it matters
+- The original source URL
 
-Prompt 6: Final Editorial Review
+Add a welcome paragraph, an AI tip of the week, and a brief editor's note.
 
-Review the newsletter for:
+Use clear language, short paragraphs, and informative headings. Do not invent facts or sources. Mark any missing information for human review.
 
-- Factual accuracy
-- Grammar and spelling
-- Repeated information
-- Clear and balanced language
-- Working source links
-- Correct dates and names
-- Unsupported claims
+Approved summaries:
+[Paste verified summaries here]
 
-List all problems and suggested corrections. Do not claim a link works unless it has actually been tested.
+Expected output: A structured newsletter draft.
 
-Usage Notes
+Prompt 5: Improve Readability
 
-1. Replace placeholders with actual source material.
-2. Verify AI-generated information against original sources.
-3. Record important corrections.
-4. Obtain human approval before publication.
+Tool: ChatGPT
+
+Prompt:
+
+Edit the following newsletter draft for grammar, clarity, and readability.
+
+Keep the original meaning, preserve source attribution, and do not introduce new factual claims. Use short paragraphs and clear headings.
+
+List any statements that appear ambiguous or require factual verification.
+
+Draft:
+[Paste newsletter draft here]
+
+Expected output: An edited draft and a list of review notes.
+
+Prompt 6: Generate a Newsletter Image
+
+Tool: ChatGPT image generation or Canva
+
+Prompt:
+
+Create a clean editorial illustration for a student newsletter about artificial intelligence and technology. Use a professional navy-blue and light-blue colour palette, subtle digital and scientific elements, and a simple composition suitable for a newsletter header.
+
+Do not include company logos, misleading text, or fabricated news imagery.
+
+Expected output: An original newsletter header illustration.
+
+Prompt 7: Prepare the Final Quality Check
+
+Tool: ChatGPT
+
+Prompt:
+
+Review the newsletter below against this checklist:
+
+- Every story has an original source link.
+- Headlines and publication dates match their sources.
+- Important claims are supported by the articles.
+- AI-generated statements are not presented as verified facts without evidence.
+- Grammar and spelling are correct.
+- The newsletter is easy to read on mobile devices.
+- Missing information is flagged rather than invented.
+
+Return a checklist showing PASS, FAIL, or NEEDS HUMAN REVIEW for each item.
+
+Do not claim that a link has been opened or verified unless that check was actually performed.
+
+Newsletter:
+[Paste final draft here]
+
+Expected output: A final quality-control checklist.
+
+Prompt Testing Record
+
+For each prompt tested, record:
+
+- Prompt number
+- AI tool used
+- Input provided
+- Output received
+- Errors or limitations identified
+- Human corrections made
+- Final result
+
+Conclusion
+
+Reusable prompts make newsletter production more consistent. However, AI outputs still require source checking, editorial review, and human approval before publication.
+
+Status: Prompt library prepared. Testing results must be added after the prompts are used.
